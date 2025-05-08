@@ -1,0 +1,58 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Theme Download</title>
+	<link rel="stylesheet" href="themes/jquery.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<!-- Page 1: Login -->
+	<div data-role="page" id="page1" data-theme =  "B">
+		<div data-role="header">
+				<h1>Login</h1>
+		</div>
+		<div data-role="content">
+				<label>Email:</label>
+				<input type="email">
+				<label>Password:</label>
+				<input type="password">
+				<button><a href="#page2">Login</a></button>
+				<p>New user? <a href="#page2">Register here</a></p>
+		</div>
+</div>
+
+  <!-- Page 2: Register -->
+	<div data-role="page" id="page2">
+		<div data-role="header">
+				<h1>Register</h1>
+		</div>
+		<div data-role="content">
+				<label>Name:</label>
+				<input type="text">
+				<label>Email:</label>
+				<input type="email">
+				<label>Password:</label>
+				<input type="password">
+				<button><a href="#page3">Register</a></button>
+		</div>
+</div>
+
+<div data-role="page" id="page3" data-theme =  "C">
+	<div data-role="header">
+			<h1>Page 3</h1>
+	</div>
+	<div data-role="content">
+			<label>Email:</label>
+			<input type="email">
+			<label>Password:</label>
+			<input type="password">
+			<button><a href="#page1">Login</a></button>
+			<p>New user? <a href="#page1">Register here</a></p>
+	</div>
+</div>
+</body>
+</html>

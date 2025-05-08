@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>User List</title>
+</head>
+<body>
+  <h2>Registered Users</h2>
+  <ul id="userList"></ul>
+
+  <script>
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const list = document.getElementById('userList');
+
+    users.forEach(user => {
+      const item = document.createElement('li');
+      item.textContent = `Name: ${user.name}, Email: ${user.email}`;
+      list.appendChild(item);
+    });
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User List</title>
+</head>
+<body>
+  <h2>Registered Users</h2>
+  <ul id="userList"></ul>
+
+  <script>
+    // Load users from local storage
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    const list = document.getElementById('userList');
+
+    // Function to display users
+    function showUsers() {
+      list.innerHTML = ''; // Clear the list first
+
+      users.forEach((user, index) => {
+        const item = document.createElement('li');
+        item.innerHTML = `
+          Name: ${user.name}, Email: ${user.email}
+          <button onclick="deleteUser(${index})">Delete</button>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    // Function to delete user by index
+    function deleteUser(index) {
+      users.splice(index, 1); // Remove user from array
+      localStorage.setItem('users', JSON.stringify(users)); // Save updated list
+      showUsers(); // Refresh the list
+    }
+
+    // Show users on page load
+    showUsers();
+  </script>
+</body>
+</html>

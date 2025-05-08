@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 2</title>
+   <!-- jQuery CDN load kar rahe -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+   <script>
+    // Page load hone ke baad
+    $(document).ready(function () {
+
+        // Jab JK 'Display' button dabata hai
+        $("#btn-1").click(function () {
+
+            // Pehle se saved data uthao localStorage se
+            const var1 = localStorage.getItem("data");
+
+            // JSON ko normal JavaScript object mein convert karo
+            const myobj = JSON.parse(var1);
+
+            // Ab input fields mein JK ka saved data bhar do
+            $("#name").val(myobj.name);
+            $("#email").val(myobj.email);
+            $("#mobile").val(myobj.mobile);
+        });
+    });
+</script>
+</head>
+<body>
+
+  <!-- Heading -->
+  <h1>JK - Display Your Details</h1>
+
+  <!-- Form jisme data dikhaya jayega -->
+  <div id="div1">
+
+      <!-- Name field -->
+      <label for="name">Enter name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <!-- Mobile field -->
+      <label for="mobile">Enter mobile number:</label><br>
+      <input type="text" id="mobile" name="mobile"><br><br>
+
+      <!-- Email field -->
+      <label for="email">Enter email id:</label><br>
+      <input type="text" id="email" name="email"><br><br>
+
+      <!-- Button jo JK ka saved data dikhata hai -->
+      <button id="btn-1">Display</button>
+
+  </div>
+  
+
+</body>
+</html>
